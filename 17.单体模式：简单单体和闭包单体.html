@@ -9,9 +9,9 @@
 <body>
 <script type=text/javascript charset=utf-8>
 
-	// 单体模式（singleton）：不使用new,直接定义变量当做对象
+	// 单体模式（singleton）：不使用new,直接定义对象
 		// 1 简单单体模式：
-		// 不使用new,直接定义变量当做对象；缺点：里面的变量没有私有化(var)，能够直接被外部访问，由此引出后面闭包单体模式
+		// 不使用new,直接定义对象；简单单体模式缺点：里面的变量没有私有化(var)，能够直接被外部访问，由此引出后面闭包单体模式
 			
 			var Singleton1 = {
 				attr1 : true,
