@@ -142,6 +142,27 @@ Array.prototype.each = function(fn){
 	return this ;
 }
 
+/**
+ * 单体模式
+ * 实现一个事件监听addEventListener的兼容
+ */
+BH.EventUtil = {
+	addHandler:function(element , type , handler){
+		if(element.addEventListener){		//FF
+			element.addEventListener(type,handler,false);//addEventListener第三个参数一般写为false
+		} else if(element.attachEvent){		//IE
+			element.attachEvent('on'+type , handler);
+		}
+	} , 
+	removeHandler:function(element , type , handler){
+		if(element.removeEventListener){		//FF
+			element.removeEventListener(type,handler,false);
+		} else if(element.detachEvent){		//IE
+			element.detachEvent('on'+type , handler);
+		}		
+	}
+};
+
 
 	
 
